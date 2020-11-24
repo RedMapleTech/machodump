@@ -1,0 +1,6 @@
+github.com/blacktop/go-macho v1.1.8 h1:9VvOXIu30GWQz5c7jdrH4kkjqAqMQ9mbjfsIQ5Wugz4=
+github.com/blacktop/go-macho v1.1.8/go.mod h1:RFM+BXgCwyvOW0IMF4IFXKQxDbw8URyGrp38uDKGxkQ=
+github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4zYo=
+github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
+github.com/fullsailor/pkcs7 v0.0.0-20190404230743-d7302db945fa h1:RDBNVkRviHZtvDvId8XSGPu3rmpmSe+wKRcEWNgsfWU=
+github.com/fullsailor/pkcs7 v0.0.0-20190404230743-d7302db945fa/go.mod h1:KnogPXtdwXqoenmZCw6S+25EAm2MkxbG0deNDu4cbSA=

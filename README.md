@@ -1,7 +1,7 @@
 # machodump
 Golang tool to dump useful information from a Mach-O binary.
 
-Uses the go package [Go-Macho](https://github.com/blacktop/go-macho) for high-level parsing.
+Uses the library [Go-Macho](https://github.com/blacktop/go-macho) for low-level parsing.
 
 There is a handy [Mach-o file template](https://www.sweetscape.com/010editor/repository/files/MachO.bt) for 010 Editor.
 

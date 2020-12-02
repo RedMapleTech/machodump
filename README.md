@@ -1,5 +1,5 @@
 # machodump
-Golang tool to dump useful information from a Mach-O binary.
+Golang tool to dump useful information from a Mach-O binary. Read more on our [blog post](https://redmaple.tech/blogs/macho-files/).
 
 Uses the library [Go-Macho](https://github.com/blacktop/go-macho) for low-level parsing.
 

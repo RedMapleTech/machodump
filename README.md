@@ -6,9 +6,10 @@ Uses the library [Go-Macho](https://github.com/blacktop/go-macho) for low-level 
 There is a handy [Mach-o file template](https://www.sweetscape.com/010editor/repository/files/MachO.bt) for 010 Editor.
 
 # Build
+Just run:
 
 ```
-go build
+make
 ```
 
 # Example

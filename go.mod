@@ -1,4 +1,4 @@
-module redmapletech/machodump
+module github.com/RedMapleTech/machodump
 
 go 1.15
 

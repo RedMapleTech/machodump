@@ -2,7 +2,7 @@ package helpers
 
 import (
 	"fmt"
-	"redmapletech/machodump/entitlements"
+	"github.com/RedMapleTech/machodump/entitlements"
 	"strings"
 	"unicode"
 

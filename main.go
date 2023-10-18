@@ -3,36 +3,35 @@ package main
 import (
 	"flag"
 	"log"
-	"redmapletech/machodump/entitlements"
-	"redmapletech/machodump/helpers"
+	"github.com/RedMapleTech/machodump/entitlements"
+	"github.com/RedMapleTech/machodump/helpers"
 	"os"
 
 	"github.com/blacktop/go-macho"
 )
 
 func main() {
-	inputPtr := flag.String("i", "", "input file")
+	var inputFile string
+	flag.StringVar(&inputFile, "i", "", "input file")
 	flag.Parse()
 
 	// check arg
-	if *inputPtr == "" {
+	if inputFile == "" {
 		flag.Usage()
-		panic("Must supply input file")
+		log.Fatalf("Must supply input file")
 	}
 
-	input := *inputPtr
-
-	if _, err := os.Stat(input); os.IsNotExist(err) {
-		log.Panicf("Fatal: input does not exist: %s", input)
+	if _, err := os.Stat(inputFile); os.IsNotExist(err) {
+		log.Fatalf("Fatal: input does not exist: %s", inputFile)
 	}
 
 	// process file details
-	log.Printf("Parsing file %q.", input)
+	log.Printf("Parsing file %q.", inputFile)
 
-	file, err := os.Open(input)
+	file, err := os.Open(inputFile)
 
 	if err != nil {
-		panic(err)
+		log.Fatalf("Error opening file %s: %q\n", inputFile, err.Error())
 	}
 
 	machoFile, err := macho.NewFile(file)
@@ -51,15 +50,14 @@ func main() {
 		helpers.PrintLibs(machoFile.ImportedLibraries())
 		helpers.PrintLoads(machoFile.Loads)
 
-		log.Printf("No code signing section in binary, exiting")
-		os.Exit(1)
+		log.Fatalln("No code signing section in binary, exiting")
 	}
 
 	// get array of entitlements
 	ents, err := entitlements.GetEntsFromXMLString(cd.Entitlements)
 
 	if err != nil {
-		log.Printf("Errored when trying to extract ents: %s", err.Error())
+		log.Printf("Errored when trying to extract entitlements: %s", err.Error())
 	}
 
 	// print file details
